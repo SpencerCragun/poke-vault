@@ -1,7 +1,7 @@
 # Pokevault Project
 
 ## Feature Ideas
-- [ ] Connect Pokemon TCG API
+- [x] Connect Pokemon TCG API
 - [ ] Sort by Card, Set, Type, Etc.
 - [ ] Search function
 - [ ] User Log In
