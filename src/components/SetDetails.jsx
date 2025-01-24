@@ -8,19 +8,22 @@ export default function SetDetails() {
   const { data: setData, loading: setLoading, error: setError } = useFetch(`https://api.pokemontcg.io/v2/sets/${id}`)
   const { data: cardsData, loading: cardsLoading, error: cardsError } = useFetch(`https://api.pokemontcg.io/v2/cards?q=set.id:${id}`);
 
-  // if (loading) return <p>Loading...</p>;
-  // if (error) return <p>Error: {error}</p>;
+  if (setLoading || cardsLoading) return <p>Loading...</p>;
+  if (setError || cardsError) return <p>Error: {setError || cardsError}</p>;
   return (
     <div>
       <h1>{setData.name}</h1>
-      {/* <img src={setData.images.symbol} alt="Set Symbol"/>
-      <img src={setData.images.logo} alt="Set Logo"/> */}
+      <div >
+        <img src={setData.images.logo} alt="Set Logo" />
+        <img src={setData.images.symbol} alt="Set Symbol" />
+      </div>
       <p>Release Date: {setData.releaseDate}</p>
       <p>Total Cards: {setData.total}</p>
       <p>Series: {setData.series}</p>
 
+      
+      <div className='set-cards'>
       <h2>Cards in this set:</h2>
-      <div>
         {cardsData.map((card) => (
           <div key={card.id}>
             <Link to={`/cards/${card.id}`}>

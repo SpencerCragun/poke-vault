@@ -11,7 +11,7 @@ export default function CardDetails() {
 
   console.log(data)
   return (
-    <div>
+    <div className='card-details'>
       <h1>{data.name}</h1>
       <img
         src={data.images.large}
@@ -21,12 +21,16 @@ export default function CardDetails() {
       <p>Subtype: {data.subtypes.join(', ')}</p>
       <p>HP: {data.hp}</p>
       <p>Types: {data.types.join(', ')}</p>
-      <p>
-        Average Sell Price: $
-        {data.cardmarket.prices.averageSellPrice || 'N/A'}
-      </p>
+      <h3>Card Prices:</h3>
+      <ul>
+        <li>Average Sell Price: ${data.cardmarket.prices.averageSellPrice || 'N/A'}</li>
+        <li>Low Price: ${data.cardmarket.prices.lowPrice || 'N/A'}</li>
+        <li>Trend Price: ${data.cardmarket.prices.trendPrice || 'N/A'}</li>
+        <li>Average 1 Day Price: ${data.cardmarket.prices.avg1 || 'N/A'}</li>
+        <li>Average 7 Day Price: ${data.cardmarket.prices.avg7 || 'N/A'}</li>
+        <li>Average 30 Day Price: ${data.cardmarket.prices.avg30 || 'N/A'}</li>
+      </ul>
       {/* abilities */}
-      
       {data.abilities && data.abilities.length > 0 ? (
         data.abilities.map((ability, index) => (
           <div key={index} className='ability-parent'>
@@ -39,21 +43,23 @@ export default function CardDetails() {
         (false)
     )}
       {/* attacks */}
-      <h3>Attacks:</h3>
-      <ul>
-        {data.attacks && data.attacks.length > 0 ? (
-          data.attacks.map((attack, index) => (
-            <li key={index} style={{ marginBottom: '1rem' }}>
-              <strong>Name:</strong> {attack.name} <br />
-              <strong>Damage:</strong> {attack.damage} <br />
-              <strong>Cost:</strong> {attack.cost} <br />
-              <strong>Effect:</strong> {attack.text}
-            </li>
-          ))
-        ) : (
-          <p>No attacks available for this card.</p>
-        )}
-      </ul>
+      <section className='attack-parent'>
+        <ul>
+          <h3>Attacks:</h3>
+          {data.attacks && data.attacks.length > 0 ? (
+            data.attacks.map((attack, index) => (
+              <li key={index} style={{ marginBottom: '1rem' }}>
+                <strong>Name:</strong> {attack.name} <br />
+                <strong>Damage:</strong> {attack.damage} <br />
+                <strong>Cost:</strong> {attack.cost} <br />
+                <strong>Effect:</strong> {attack.text}
+              </li>
+            ))
+          ) : (
+            <p>No attacks available for this card.</p>
+          )}
+        </ul>
+      </section>  
     </div>
   )
 }
