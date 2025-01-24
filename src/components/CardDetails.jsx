@@ -26,13 +26,18 @@ export default function CardDetails() {
         {data.cardmarket.prices.averageSellPrice || 'N/A'}
       </p>
       {/* abilities */}
-      <h3>Abilities:</h3>
-      {data.abilities.map((ability, index) => (
-        <div key={index} className='ability-parent'>
-          <p>Ability: {ability.name}</p>
-          <p>{ability.text}</p>
-        </div>
-      ))}
+      
+      {data.abilities && data.abilities.length > 0 ? (
+        data.abilities.map((ability, index) => (
+          <div key={index} className='ability-parent'>
+            <h3>Abilities:</h3>
+            <p>{ability.name}</p>
+            <p>{ability.text}</p>
+          </div>
+      ))
+      ) : (
+        (false)
+    )}
       {/* attacks */}
       <h3>Attacks:</h3>
       <ul>

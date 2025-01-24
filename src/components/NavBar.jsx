@@ -6,8 +6,9 @@ export default function NavBar() {
   return (
     
     <div>
+      <Link to={`/`}><p>Home</p></Link>
       <input type='text' placeholder='search for card'></input>
-      <Link to={`/sets`} style={{ textDecoration: 'none', color: 'inherit' }}><p>Sets</p></Link>
+      <Link to={`/sets`}><p>Sets</p></Link>
     </div>
   )
 }
