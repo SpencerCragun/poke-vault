@@ -18,6 +18,20 @@ body {
   background-color: #ff3434;
 }
 
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-left: 1rem;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-right: 2rem;
+}
+
 .nav-link {
   color: #fff;
   text-decoration: none;
@@ -50,8 +64,8 @@ body {
 }
 
 .card-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 1rem;
 }
 
@@ -60,6 +74,8 @@ body {
   padding: 1rem;
   border-radius: 8px;
   text-align: center;
+  background-color: #ffffff4b;
+  color: #000;
 }
 
 .card-link {
@@ -126,4 +142,33 @@ body {
   width: 100px;
   height: auto;
   margin-bottom: 0.5rem;
+}
+
+.card-details {
+  padding: 1rem;
+  flex: 1;
+}
+
+.card-details-parent {
+  padding: 1rem;
+}
+
+.card-details-container {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #ffffff2f;
+  color: #ffffff;
+}
+
+.card-info {
+  margin-bottom: 1rem;
+}
+
+.card-prices {
+  list-style-type: none;
+  padding: 0;
 }
