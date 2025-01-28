@@ -1,7 +1,6 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
-import { Link } from 'react-router-dom';
 
 export default function SearchResults() {
   const location = useLocation();
@@ -13,20 +12,13 @@ export default function SearchResults() {
   if (data.length === 0) return <p>No cards found.</p>;
 
   return (
-    <div>
-      <h1>{searchTerm}</h1>
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
+    <div className='search-results'>
+      <h1>Search Results for "{searchTerm}"</h1>
+      <div className='card-grid'>
         {data.map((card) => (
-          <div 
-            key={card.id}
-            style={{ border: '1px solid #ccc', padding: '1rem', borderRadius: '8px', textAlign: 'center' }}
-          >
-            <Link to={`/cards/${card.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-              <img 
-                src={card.images.small} 
-                alt={card.name}
-                style={{ width: '100px', height: 'auto', marginBottom: '0.5rem' }}
-              />
+          <div key={card.id} className='card-item'>
+            <Link to={`/cards/${card.id}`} className='card-link'>
+              <img src={card.images.small} alt={card.name} className='card-image' />
               <p>{card.name}</p>
             </Link>
           </div>

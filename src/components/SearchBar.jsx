@@ -11,19 +11,15 @@ export default function SearchBar() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='search-bar'>
       <input
         type="text"
         placeholder="Search cards..."
         value={searchTerm}
         onChange={(event) => setSearchTerm(event.target.value)}
-        style={{ 
-          padding: '8px',
-          marginBottom: '20px',
-          width: '200px'
-        }}
+        className='search-input'
       />
-      <button type="submit">Search</button>
+      <button type="submit" className='search-button'>Search</button>
     </form>
   );
 }

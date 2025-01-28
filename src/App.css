@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #2e312c;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #ff3434;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 8px;
+  margin-right: 10px;
+  width: 200px;
+  border-radius: 25px;
+  border: none;
+}
+
+.search-button {
+  padding: 8px 16px;
+  border-radius: 25px;
+  border: none;
+  background-color: #fff;
+  color: #ff3434;
+  cursor: pointer;
+}
+
+.search-results {
+  padding: 1rem;
+}
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.card-item {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-image {
+  width: 100px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+.card-image-large {
+  width: 300px;
+  height: auto;
+}
+
+.abilities, .attacks {
+  margin-top: 1rem;
+}
+
+.ability-item, .attack-item {
+  margin-bottom: 1rem;
+}
+
+.set-details {
+  padding: 1rem;
+}
+
+.set-images {
+  display: flex;
+  gap: 1rem;
+}
+
+.set-logo, .set-symbol {
+  width: 100px;
+  height: auto;
+}
+
+.all-cards, .all-sets {
+  padding: 1rem;
+}
+
+.set-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.set-item {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.set-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.set-image {
+  width: 100px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
