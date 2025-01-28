@@ -24,11 +24,11 @@ export default function CardDetails() {
       <h3>Card Prices:</h3>
       <ul>
         <li>Average Sell Price: ${data.cardmarket.prices.averageSellPrice || 'N/A'}</li>
-        <li>Low Price: ${data.cardmarket.prices.lowPrice || 'N/A'}</li>
-        <li>Trend Price: ${data.cardmarket.prices.trendPrice || 'N/A'}</li>
-        <li>Average 1 Day Price: ${data.cardmarket.prices.avg1 || 'N/A'}</li>
-        <li>Average 7 Day Price: ${data.cardmarket.prices.avg7 || 'N/A'}</li>
-        <li>Average 30 Day Price: ${data.cardmarket.prices.avg30 || 'N/A'}</li>
+        <li>Low Price: ${data.cardmarket.prices.lowPrice || 'No price found'}</li>
+        <li>Trend Price: ${data.cardmarket.prices.trendPrice || 'No price found'}</li>
+        <li>Average 1 Day Price: ${data.cardmarket.prices.avg1 || 'No price found'}</li>
+        <li>Average 7 Day Price: ${data.cardmarket.prices.avg7 || 'No price found'}</li>
+        <li>Average 30 Day Price: ${data.cardmarket.prices.avg30 || 'No price found'}</li>
       </ul>
       {/* abilities */}
       {data.abilities && data.abilities.length > 0 ? (

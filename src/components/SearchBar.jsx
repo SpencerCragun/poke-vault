@@ -5,8 +5,8 @@ export default function SearchBar() {
   const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
     navigate(`/search?q=${searchTerm}`);
   };
 
@@ -16,7 +16,7 @@ export default function SearchBar() {
         type="text"
         placeholder="Search cards..."
         value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
+        onChange={(event) => setSearchTerm(event.target.value)}
         style={{ 
           padding: '8px',
           marginBottom: '20px',
