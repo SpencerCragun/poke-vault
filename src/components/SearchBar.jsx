@@ -1,16 +1,29 @@
-import React from 'react'
-import useFetch from '../hooks/useFetch';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function SearchBar() {
-  const { data, loading, error } = useFetch(`https://api.pokemontcg.io/v2/cards`);
+  const [searchTerm, setSearchTerm] = useState('');
+  const navigate = useNavigate();
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
-  if (data.length === 0) return <p>No cards found.</p>;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate(`/search?q=${searchTerm}`);
+  };
 
   return (
-    <div>
-      
-    </div>
-  )
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        placeholder="Search cards..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        style={{ 
+          padding: '8px',
+          marginBottom: '20px',
+          width: '200px'
+        }}
+      />
+      <button type="submit">Search</button>
+    </form>
+  );
 }
