@@ -11,13 +11,12 @@ export default function AllCards() {
 
   return (
     <div className='all-cards'>
-      <h1>Pokémon Cards</h1>
+      <h1>Featured Cards</h1>
       <div className='card-grid'>
         {data.map((card) => (
           <div key={card.id} className='card-item'>
             <Link to={`/cards/${card.id}`} className='card-link'>
               <img src={card.images.small || 'placeholder.jpg'} alt={card.name} className='card-image' />
-              <p>{card.name}</p>
             </Link>
           </div>
         ))}
