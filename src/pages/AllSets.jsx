@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function AllSets() {
   const { data, loading, error } = useFetch(`https://api.pokemontcg.io/v2/sets`);
-  
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
+
   // Group sets by series
   const setsBySeries = data.reduce((acc, set) => {
     if (!acc[set.series]) {
@@ -18,6 +16,8 @@ export default function AllSets() {
 
   return (
     <div className='all-sets'>
+      {loading && <p>Loading...</p>}
+      {error && <p>Error: {error}</p>}
       {Object.keys(setsBySeries).map((series) => (
         <div key={series} className='series-group'>
           <h2>{series}</h2>
