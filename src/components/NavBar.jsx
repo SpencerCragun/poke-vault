@@ -7,7 +7,6 @@ export default function NavBar() {
     <div className='nav-bar'>
       <div className='nav-left'>
         <h1>PokeVault</h1>
-        <SearchBar />
       </div>
       <div className='nav-right'>
         <Link to={`/`} className='nav-link'><p>Home</p></Link>
