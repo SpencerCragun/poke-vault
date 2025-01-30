@@ -159,7 +159,6 @@ body {
   color: #ffffff;
 }
 
-
 .card-info {
   margin-bottom: 1rem;
 }
@@ -167,4 +166,19 @@ body {
 .card-prices {
   list-style-type: none;
   padding: 0;
+}
+
+.back-to-set-link {
+  display: block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #ff3434;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.back-to-set-link:hover {
+  background-color: #e02e2e;
 }

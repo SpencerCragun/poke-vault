@@ -1,12 +1,12 @@
 import React from 'react';
 import useFetch from '../hooks/useFetch';
-import { useParams } from 'react-router-dom';
-import CardImage from './CardImage';
-import CardInfo from './CardInfo';
-import CardPrices from './CardPrices';
-import CardAbilities from './CardAbilities';
-import CardAttacks from './CardAttacks';
-import CardRules from './CardRules';
+import { Link, useParams } from 'react-router-dom';
+import CardImage from '../components/CardImage';
+import CardInfo from '../components/CardInfo';
+import CardPrices from '../components/CardPrices';
+import CardAbilities from '../components/CardAbilities';
+import CardAttacks from '../components/CardAttacks';
+import CardRules from '../components/CardRules';
 
 export default function CardDetails() {
   const { id } = useParams();
@@ -14,8 +14,6 @@ export default function CardDetails() {
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
-
-  console.log(data);
 
   return (
     <div className='card-details-parent'>
@@ -32,6 +30,12 @@ export default function CardDetails() {
         <CardAbilities abilities={data.abilities} />
         <CardAttacks attacks={data.attacks} />
         <CardRules rules={data.rules} />
+        {data.set && data.set.id && (
+          <Link to={`/sets/${data.set.id}`} className='back-to-set-link'>
+            <span>Set:</span>
+            <h3>{data.set.name}</h3>
+          </Link>
+        )}
       </div>
     </div>
   );

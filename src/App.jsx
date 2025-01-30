@@ -1,11 +1,11 @@
-import './App.css'
-import CardDetails from './components/CardDetails'
-import AllCards from './components/AllCards'
-import AllSets from './components/AllSets'
-import { Route, Routes } from 'react-router-dom'
-import NavBar from './components/NavBar'
-import SetDetails from './components/SetDetails'
-import SearchResults from './components/SearchResults'
+import './App.css';
+import CardDetails from './pages/CardDetails';
+import AllCards from './pages/AllCards';
+import AllSets from './pages/AllSets';
+import SetDetails from './pages/SetDetails';
+import SearchResults from './pages/SearchResults';
+import { Route, Routes } from 'react-router-dom';
+import NavBar from './components/NavBar';
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
         <Route path='/search' element={<SearchResults />} />
       </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
