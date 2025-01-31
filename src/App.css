@@ -8,15 +8,26 @@ body {
   background-color: #2e312c;
   color: #fff;
   font-family: Arial, sans-serif;
+  padding-top: 60px;
 }
 
 /* Navigation */
 .nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
   background-color: #ff3434;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.nav-hidden {
+  transform: translateY(-100%);
 }
 
 .nav-left {
@@ -159,27 +170,49 @@ body {
 /* Set Components */
 .set-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
   padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .set-item {
-  border: 1px solid #ccc;
-  padding: 1rem;
-  border-radius: 8px;
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+.set-item:hover {
+  transform: translateY(-5px);
 }
 
 .set-link {
   text-decoration: none;
   color: inherit;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .set-image {
-  width: 100px;
+  width: 200px;
   height: auto;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  align-self: center;
+}
+
+.set-link p {
+  text-align: center;
+  padding: 0 1rem;
 }
 
 /* Set Details Page */
@@ -215,4 +248,16 @@ body {
   margin-left: 0.5rem;
   width: 24px;
   height: 24px;
+}
+
+.all-sets {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.series-group h2 {
+  text-align: left;
+  padding-left: 1.5rem;
+  margin: 2rem 0 1rem;
 }
