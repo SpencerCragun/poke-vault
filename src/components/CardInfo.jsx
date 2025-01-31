@@ -1,4 +1,5 @@
 import React from 'react';
+import TypeSymbol from './TypeSymbol';
 
 export default function CardInfo({ name, subtypes, supertype, hp, types, weaknesses, resistances, artist, number, rarity, totalCards }) {
   return (
@@ -7,12 +8,38 @@ export default function CardInfo({ name, subtypes, supertype, hp, types, weaknes
       {subtypes && <p>{subtypes.join(', ')}</p>}
       {supertype && <p>{supertype}</p>}
       {hp && <p>HP: {hp}</p>}
-      {types && <p>Types: {types.join(', ')}</p>}
+      {types && (
+        <div className="type-container">
+          <span>Types: </span>
+          {types.map((type, index) => (
+            <div key={index} className="type-wrapper">
+              <TypeSymbol type={type} />
+              <span>{type}</span>
+            </div>
+          ))}
+        </div>
+      )}
       {weaknesses && weaknesses.length > 0 && (
-        <p>Weaknesses: {weaknesses.map(w => `${w.type} ${w.value}`).join(', ')}</p>
+        <div className="type-container">
+          <span>Weaknesses: </span>
+          {weaknesses.map((w, index) => (
+            <div key={index} className="type-wrapper">
+              <TypeSymbol type={w.type} />
+              <span>{w.value}</span>
+            </div>
+          ))}
+        </div>
       )}
       {resistances && resistances.length > 0 && (
-        <p>Resistances: {resistances.map(r => `${r.type} ${r.value}`).join(', ')}</p>
+        <div className="type-container">
+          <span>Resistances: </span>
+          {resistances.map((r, index) => (
+            <div key={index} className="type-wrapper">
+              <TypeSymbol type={r.type} />
+              <span>{r.value}</span>
+            </div>
+          ))}
+        </div>
       )}
       {artist && <p>Artist: {artist}</p>}
       {number && totalCards && <p>{number} / {totalCards}</p>}

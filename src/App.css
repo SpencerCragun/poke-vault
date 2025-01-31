@@ -28,7 +28,7 @@ body {
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
   padding-right: 2rem;
 }
 
@@ -37,9 +37,25 @@ body {
   text-decoration: none;
 }
 
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  text-align: center;
+}
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
 .search-bar {
   display: flex;
   align-items: center;
+  margin: 1rem 0;
 }
 
 .search-input {
@@ -57,6 +73,19 @@ body {
   background-color: #fff;
   color: #ff3434;
   cursor: pointer;
+}
+
+.sets-button {
+  padding: 8px 16px;
+  border-radius: 25px;
+  border: none;
+  background-color: #ff3434;
+  color: #fff;
+  cursor: pointer;
+}
+
+.sets-button:hover {
+  background-color: #e02e2e;
 }
 
 .search-results {
@@ -169,16 +198,43 @@ body {
 }
 
 .back-to-set-link {
-  display: block;
+  display: flex;
+  align-items: center;
   margin-top: 1rem;
   padding: 0.5rem 1rem;
   background-color: #ff3434;
   color: #fff;
-  text-align: center;
   text-decoration: none;
   border-radius: 8px;
 }
 
+.back-to-set-link img {
+  margin-left: 0.5rem;
+  width: 24px;
+  height: 24px;
+}
+
 .back-to-set-link:hover {
   background-color: #e02e2e;
+}
+
+.type-symbol {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 0 4px;
+}
+
+.type-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-right: 8px;
+}
+
+.type-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
 }
