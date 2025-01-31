@@ -1,4 +1,5 @@
 import React from 'react';
+import TypeSymbol from './TypeSymbol';
 
 export default function CardAttacks({ attacks }) {
   return attacks && attacks.length > 0 ? (
@@ -7,9 +8,13 @@ export default function CardAttacks({ attacks }) {
       <ul>
         {attacks.map((attack, index) => (
           <li key={index} className='attack-item'>
-            <strong>Name:</strong> {attack.name} <br />
+            <strong>Name:</strong> {attack.name}
+            <span className="cost-container">
+              {attack.cost.map((type, costIndex) => (
+                <TypeSymbol key={costIndex} type={type} />
+              ))}
+            </span> <br />
             <strong>Damage:</strong> {attack.damage} <br />
-            <strong>Cost:</strong> {attack.cost.join(', ')} <br />
             <strong>Effect:</strong> {attack.text}
           </li>
         ))}

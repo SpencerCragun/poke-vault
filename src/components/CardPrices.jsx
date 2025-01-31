@@ -4,9 +4,9 @@ export default function CardPrices({ prices }) {
   return prices ? (
     <ul className='card-prices'>
       <h3>Card Prices:</h3>
-      <span>Average Sell Price:</span>
+      <span>Average Sell Price</span>
       {prices.averageSellPrice && <li>${prices.averageSellPrice}</li>}
-      <span>Average Sell Price:</span>
+      <span></span>
       {prices.lowPrice && <li>Low Price: ${prices.lowPrice}</li>}
       <span>Average Sell Price:</span>
       {prices.trendPrice && <li>Trend Price: ${prices.trendPrice}</li>}
