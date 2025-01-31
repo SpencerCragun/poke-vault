@@ -15,8 +15,6 @@ export default function CardDetails() {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
 
-  console.log(data);
-  
   return (
     <div className='card-details-parent'>
       <div className='card-details-container'>
@@ -24,9 +22,15 @@ export default function CardDetails() {
         <CardInfo
           name={data.name}
           subtypes={data.subtypes}
-          supertypes={data.supertypes}
+          supertype={data.supertype}
           hp={data.hp}
           types={data.types}
+          weaknesses={data.weaknesses}
+          resistances={data.resistances}
+          artist={data.artist}
+          number={data.number}
+          rarity={data.rarity}
+          totalCards={data.set.printedTotal}
         />
         <CardPrices prices={data.cardmarket?.prices} />
         <CardAbilities abilities={data.abilities} />
@@ -34,8 +38,8 @@ export default function CardDetails() {
         <CardRules rules={data.rules} />
         {data.set && data.set.id && (
           <Link to={`/sets/${data.set.id}`} className='back-to-set-link'>
-            <span>Set:</span>
-            <h3>{data.set.name}</h3>
+            {data.set.name}
+            <img src={data.set.images.symbol} className='set-symbol' />
           </Link>
         )}
       </div>
