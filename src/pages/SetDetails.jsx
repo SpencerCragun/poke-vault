@@ -26,7 +26,6 @@ export default function SetDetails() {
           <div key={card.id} className='card-item'>
             <Link to={`/cards/${card.id}`} className='card-link'>
               <img src={card.images.small} alt={card.name} className='card-image' />
-              <p>{card.name}</p>
             </Link>
           </div>
         ))}
