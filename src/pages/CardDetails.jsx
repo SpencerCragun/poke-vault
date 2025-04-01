@@ -17,33 +17,40 @@ export default function CardDetails() {
 
   console.log(data);
 
+
+  // store and subscribe instead of this props mess
+  // provider and consumer?
+   
   return (
     <div className='card-details-parent'>
       <div className='card-details-container'>
-        <CardImage image={data.images.large} name={data.name} />
-        <CardInfo
-          name={data.name}
-          subtypes={data.subtypes}
-          supertype={data.supertype}
-          hp={data.hp}
-          types={data.types}
-          weaknesses={data.weaknesses}
-          resistances={data.resistances}
-          artist={data.artist}
-          number={data.number}
-          rarity={data.rarity}
-          totalCards={data.set.printedTotal}
-        />
-        <CardPrices prices={data.cardmarket?.prices} />
-        <CardAbilities abilities={data.abilities} />
-        <CardAttacks attacks={data.attacks} />
-        <CardRules rules={data.rules} />
-        {data.set && data.set.id && (
-          <Link to={`/sets/${data.set.id}`} className='back-to-set-link'>
-            {data.set.name}
-            <img src={data.set.images.symbol} className='set-symbol' />
-          </Link>
-        )}
+        <div className='card-image-container'>
+          <CardImage image={data.images.large} name={data.name} />
+        </div>
+        <div className='card-details-right'>
+          <CardInfo
+            name={data.name}
+            subtypes={data.subtypes}
+            supertype={data.supertype}
+            hp={data.hp}
+            types={data.types}
+            weaknesses={data.weaknesses}
+            resistances={data.resistances}
+            artist={data.artist}
+            number={data.number}
+            rarity={data.rarity}
+            totalCards={data.set.printedTotal}
+          />
+          <CardPrices prices={data.cardmarket?.prices} />
+          <CardAbilities abilities={data.abilities} />
+          <CardAttacks attacks={data.attacks} />
+          {data.set && data.set.id && (
+            <Link to={`/sets/${data.set.id}`} className='back-to-set-link'>
+              {data.set.name}
+              <img src={data.set.images.symbol} className='set-symbol' />
+            </Link>
+          )}
+        </div>
       </div>
     </div>
   );

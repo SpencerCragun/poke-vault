@@ -8,7 +8,7 @@ export default function CardAttacks({ attacks }) {
       <ul>
         {attacks.map((attack, index) => (
           <li key={index} className='attack-item'>
-            <strong>Name:</strong> {attack.name}
+            <strong>{attack.name}</strong> 
             <span className="cost-container">
               {attack.cost.map((type, costIndex) => (
                 <TypeSymbol key={costIndex} type={type} />

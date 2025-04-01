@@ -20,7 +20,6 @@ export default function SetDetails() {
       <p>Release Date: {setData.releaseDate}</p>
       <p>Total Cards: {setData.total}</p>
       <p>Series: {setData.series}</p>
-      <h2>Cards in this set:</h2>
       <div className='card-grid'>
         {cardsData.map((card) => (
           <div key={card.id} className='card-item'>
