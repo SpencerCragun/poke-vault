@@ -15,7 +15,6 @@ export default function SearchResults() {
 
   return (
     <div className='search-results'>
-      <h1>Search Results for "{searchTerm}"</h1>
       <div className='card-grid'>
         {data.map((card) => (
           <div key={card.id} className='card-item'>

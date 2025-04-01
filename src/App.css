@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #2e312c;
+  background-color: #041421;
   color: #fff;
   font-family: Arial, sans-serif;
   padding-top: 60px;
@@ -21,7 +21,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: #ff3434;
+  background-color: #042630;
   transition: transform 0.3s ease-in-out;
   z-index: 1000;
 }
@@ -54,7 +54,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50vh;
+  height: 80vh;  
   text-align: center;
 }
 
@@ -62,43 +62,58 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;  
+  padding: 2rem;
+}
+
+.home-content h1 {
+  font-size: 3.5rem;  
+  margin-bottom: 1rem;
+}
+
+.home-content span {
+  font-size: 1.2rem;  
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* Search Components */
 .search-bar {
   display: flex;
   align-items: center;
-  margin: 1rem 0;
+  margin: 2rem 0;  
+  gap: 1rem;
 }
 
 .search-input {
-  padding: 8px;
-  margin-right: 10px;
-  width: 200px;
+  padding: 1rem 1.5rem;  
+  width: 400px;  
   border-radius: 25px;
   border: none;
+  font-size: 1.1rem; 
 }
 
 .search-button, .sets-button {
-  padding: 8px 16px;
+  padding: 1rem 2rem;  
   border-radius: 25px;
   border: none;
   cursor: pointer;
+  font-size: 1.1rem;  
+  transition: transform 0.2s ease;
 }
 
 .search-button {
   background-color: #fff;
-  color: #ff3434;
+  color: #041421;
+}
+
+.search-button:hover, .sets-button:hover {
+  transform: scale(1.05);
+  background-color: #4c7273;
 }
 
 .sets-button {
-  background-color: #ff3434;
+  background-color: #4c7273;
   color: #fff;
-}
-
-.sets-button:hover {
-  background-color: #e02e2e;
 }
 
 /* Card Grid Layout */
