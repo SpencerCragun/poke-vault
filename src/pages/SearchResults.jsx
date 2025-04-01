@@ -7,6 +7,8 @@ export default function SearchResults() {
   const searchTerm = new URLSearchParams(location.search).get('q');
   const { data, loading, error } = useFetch(`https://api.pokemontcg.io/v2/cards?q=name:${searchTerm}`);
 
+  // create interface for interacting with pokemon api
+
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
   if (data.length === 0) return <p>No cards found.</p>;
